@@ -127,9 +127,9 @@ map.fitBounds([
           const states = map.queryRenderedFeatures(event.point, {
             layers: ['population']
           });
-          document.getElementById('pd').innerHTML = states.length
-            ? `<h3>${states[0].properties.REGION}</h3><p><strong><em>${states[0].properties.POPULATION}</strong> people per square mile</em></p>`
-            : `<p>Hover over a state!</p>`;
+          document.getElementById('pd').innerHTML = states.length 
+    ? `<h3>${states[0].properties.REGION}</h3><p><strong><em>${states[0].properties.POPULATION.toLocaleString()}</strong> people per square mile</em></p>` 
+    : `<p>Hover over a state!</p>`;
         });
       });
     </script>
