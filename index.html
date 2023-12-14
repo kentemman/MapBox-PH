@@ -75,7 +75,7 @@
   <body>
     <div id="map"></div>
     <div class="map-overlay" id="features">
-      <h2>Philippine Population Density</h2>
+      <h2>Philippine Population</h2>
       <div id="pd"><p>Hover over a state!</p></div>
     </div>
     <div class="map-overlay" id="legend"></div>
@@ -128,6 +128,12 @@ map.fitBounds([
           item.appendChild(value);
           legend.appendChild(item);
         });
+// Adding credit line
+const credit = document.createElement('div');
+credit.innerHTML = '© Philippine Static Authority 2015 Data';
+credit.style.textAlign = 'center';
+credit.style.marginTop = '10px'; // You can adjust the margin as needed
+legend.appendChild(credit);
 
         // change info window on hover
         map.on('mousemove', (event) => {
